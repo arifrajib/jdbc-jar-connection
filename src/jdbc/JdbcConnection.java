@@ -14,19 +14,19 @@ public class JdbcConnection {
 		Connection connection = null;
 		
 		try {
-			//// Connect with DB 
-			connection = DriverManager.getConnection("jdbc:mysql://192.168.0.21:3306/consumer_report", "root", "root");
-			//// Create Statement
+			//// 1. Connect with DB 
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_name", "user", "password");
+			//// 2. Create Statement
 			Statement statement = connection.createStatement();
-			//// Execute Statement
+			//// 3. Execute Statement
 			ResultSet result = statement.executeQuery("SHOW TABLES");
 			
-			//// Iterate the Result
+			//// 4. Iterate the Result
 			while(result.next()) {
 				System.out.println(result.getString(1));
 			}
 			
-			//// Close the Connection
+			//// 5. Close the Connection
 			connection.close();
 			
 		} catch (SQLException e) {
