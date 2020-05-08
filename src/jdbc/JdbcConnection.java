@@ -26,15 +26,13 @@ public class JdbcConnection {
 				System.out.println(result.getString(1));
 			}
 			
-			//// 5. Close the Connection
-			connection.close();
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 		} finally {
 			if (connection != null) {
 				try {
+					//// 5. Close the Connection
 					connection.close();
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
